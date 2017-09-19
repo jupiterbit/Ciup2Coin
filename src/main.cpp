@@ -698,7 +698,7 @@ int CMerkleTx::GetBlocksToMaturity() const
 {
     if (!IsCoinBase())
         return 0;
-    return max(0, (COINBASE_MATURITY+20) - GetDepthInMainChain());
+    return max(0, (COINBASE_MATURITY) - GetDepthInMainChain());
 }
 
 
@@ -831,16 +831,16 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     int64 nSubsidy = 10 * COIN; //Amt of coins per block
 
 
-    if(nHeight < 4) // sin rencompensa hasta el primer minuto
-        nSubsidy = 0;
+    //if(nHeight < 4) // sin rencompensa hasta el primer minuto
+      //  nSubsidy = 0;
     if(nHeight > 10519200) // no block reward after 5 years
         nSubsidy = 0;
 
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 0.10 * 60 * 60; // Ciup2Coin: 0.35 days    // TIEMPO EN REAJSUTAR LA DIFICULTAD DE LA MINERIA / ES PROPORCIONAL AL NUMERO DE MONEDAS EXISTENTES
-static const int64 nTargetSpacing = 10; // Ciup2Coin: 10 seconds
+static const int64 nTargetTimespan = 5 * 60; // Ciup2Coin: 0.35 days    // TIEMPO EN REAJSUTAR LA DIFICULTAD DE LA MINERIA / ES PROPORCIONAL AL NUMERO DE MONEDAS EXISTENTES
+static const int64 nTargetSpacing = 30; // Ciup2Coin: 10 seconds
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 // Thanks: Balthazar for suggesting the following fix
