@@ -838,8 +838,8 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 5 * 60; // Ciup2Coin: 0.35 days    // TIEMPO EN REAJSUTAR LA DIFICULTAD DE LA MINERIA / ES PROPORCIONAL AL NUMERO DE MONEDAS EXISTENTES
-static const int64 nTargetSpacing = 30; // Ciup2Coin: 10 seconds
+static const int64 nTargetTimespan = 10 * 60; // Ciup2Coin: 0.35 days    // TIEMPO EN REAJSUTAR LA DIFICULTAD DE LA MINERIA / ES PROPORCIONAL AL NUMERO DE MONEDAS EXISTENTES
+static const int64 nTargetSpacing = 20; // Ciup2Coin: 10 seconds
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 // Thanks: Balthazar for suggesting the following fix
